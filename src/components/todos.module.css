@@ -1,0 +1,226 @@
+body,
+html {
+  margin: 0;
+  background-color: rgb(30, 13, 93);
+}
+.container {
+  max-width: 600px;
+  background-color: rgb(30, 13, 93);
+  margin: 0 auto;
+  /* display: flex; */
+  padding: 10px;
+  color: #eee;
+}
+
+.usersSecion {
+  display: flex;
+  align-items: center;
+}
+.usersSecion input {
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 7px;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.todoInput {
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+.categorySection {
+  width: 100%;
+}
+.categorySection input[type="submit"] {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  font-weight: bold;
+  margin: 20px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #3d2b8e;
+  transition: all 0.3s ease-in-out;
+}
+.categorySection input[type="submit"]:hover{
+  opacity: 0.8;
+}
+h5 {
+  color: rgb(201, 200, 201);
+  margin-bottom: 8px;
+}
+.categories {
+  width: 100%;
+  background-color: transparent;
+  margin-bottom: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.categories label {
+  background-color: #fff;
+  border-radius: 5px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 45%;
+  cursor: pointer;
+}
+.categories label span {
+  font-style: italic;
+  color: #3d2b8e;
+}
+.categories label .businessButton {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 1px 0 3px #0d6efd, 0 1px 3px #0d6efd, -1px 0px 3px #0d6efd,
+    0 -1px 3px #0d6efd;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.categories label .businessButton::after {
+  content: "";
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  border-radius: 50%;
+  opacity: 0;
+  background-color: rgb(56, 69, 146);
+  transition: all 0.5s ease;
+}
+.business:checked ~ .businessButton::after {
+  opacity: 1;
+}
+
+/******************************** personal categories styles */
+.categories label .personalButton {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 1px 0 3px #c042f1, 0 1px 3px #c042f1, -1px 0px 3px #c042f1,
+    0 -1px 3px #c042f1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.categories label .personalButton::after {
+  content: "";
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  border-radius: 50%;
+  opacity: 0;
+  background-color: #732194;
+  transition: all 0.5s ease;
+}
+.personal:checked ~ .personalButton::after {
+  opacity: 1;
+}
+
+.todoListsContainer {
+  background-color: #3d2b8e;
+  padding: 8px;
+  border-radius: 8px;
+}
+.todoListWrapper {
+  max-height: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.todos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+  background-color: #fff;
+  padding: 7px 10px;
+  color: #3d2b8e;
+  border-radius: 7px;
+}
+.todos.active .leftTodo input{
+  /* color: red; */
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+.leftTodo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.leftTodo input{
+  padding:2px;
+  font-size: 0.9em;
+  color: #3d2b8e; 
+  outline: none;
+  border: none;
+  /* font-weight: 200; */
+}
+/* .leftTodo label */
+.checkedTodoButton {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 1px 0 3px #c042f1, 0 1px 3px #c042f1, -1px 0px 3px #c042f1,
+    0 -1px 3px #c042f1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+.checkedTodoButton::after {
+  content: "";
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  border-radius: 50%;
+  opacity: 0;
+  background-color: #732194;
+  transition: all 0.5s ease;
+}
+.checkedTodo:checked ~ .checkedTodoButton::after {
+  opacity: 1;
+}
+
+.checkedTodo:checked ~.leftTodoInput{
+  display: none;
+}
+.rightTodo button{
+  border: none;
+  padding: 6px;
+  background-color: rgb(30, 13, 93);
+
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.rightTodo button:nth-child(1){
+  margin-right: 5px;
+  background-color: #9c5de9;
+}
+.rightTodo button:nth-child(1):hover{
+  background-color:#732194;
+}
