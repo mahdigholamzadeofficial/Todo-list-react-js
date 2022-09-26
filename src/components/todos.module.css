@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt:ital,wght@1,400&display=swap");
 body,
 html {
   margin: 0;
   background-color: rgb(30, 13, 93);
+  font-family: "Prompt", sans-serif;
 }
 .container {
   max-width: 600px;
@@ -49,7 +51,7 @@ html {
   color: #3d2b8e;
   transition: all 0.3s ease-in-out;
 }
-.categorySection input[type="submit"]:hover{
+.categorySection input[type="submit"]:hover {
   opacity: 0.8;
 }
 h5 {
@@ -74,6 +76,7 @@ h5 {
   flex-direction: column;
   width: 45%;
   cursor: pointer;
+  /* font-weight: bolder; */
 }
 .categories label span {
   font-style: italic;
@@ -155,26 +158,55 @@ h5 {
   color: #3d2b8e;
   border-radius: 7px;
 }
-.todos.active .leftTodo input{
+.todos.active .leftTodo input {
   /* color: red; */
   text-decoration: line-through;
   opacity: 0.7;
 }
-.leftTodo{
+.leftTodo {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.leftTodo input{
-  padding:2px;
+.leftTodo input {
+  padding: 2px;
   font-size: 0.9em;
-  color: #3d2b8e; 
+  color: #3d2b8e;
   outline: none;
   border: none;
   /* font-weight: 200; */
 }
 /* .leftTodo label */
-.checkedTodoButton {
+.checkedTodoButtonBusiness {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 1px 0 3px #0d6efd, 0 1px 3px #0d6efd, -1px 0px 3px #0d6efd,
+    0 -1px 3px #0d6efd;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5px;
+  margin-right: 5px;
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+.checkedTodoButtonBusiness::after {
+  content: "";
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  border-radius: 50%;
+  opacity: 0;
+  background-color: rgb(48, 63, 146);
+  transition: all 0.5s ease;
+}
+.checkedTodo:checked ~ .checkedTodoButtonBusiness::after {
+  opacity: 1;
+}
+.checkedTodoButtonPersonal {
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -190,7 +222,7 @@ h5 {
   cursor: pointer;
 }
 
-.checkedTodoButton::after {
+.checkedTodoButtonPersonal::after {
   content: "";
   position: absolute;
   height: 80%;
@@ -200,14 +232,14 @@ h5 {
   background-color: #732194;
   transition: all 0.5s ease;
 }
-.checkedTodo:checked ~ .checkedTodoButton::after {
+.checkedTodo:checked ~ .checkedTodoButtonPersonal::after {
   opacity: 1;
 }
 
-.checkedTodo:checked ~.leftTodoInput{
+/* .checkedTodo:checked ~.leftTodoInput{
   display: none;
-}
-.rightTodo button{
+} */
+.rightTodo button {
   border: none;
   padding: 6px;
   background-color: rgb(30, 13, 93);
@@ -217,10 +249,10 @@ h5 {
   cursor: pointer;
   transition: 0.3s ease;
 }
-.rightTodo button:nth-child(1){
+.rightTodo button:nth-child(1) {
   margin-right: 5px;
   background-color: #9c5de9;
 }
-.rightTodo button:nth-child(1):hover{
-  background-color:#732194;
+.rightTodo button:nth-child(1):hover {
+  background-color: #732194;
 }
