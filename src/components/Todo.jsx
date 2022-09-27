@@ -28,14 +28,14 @@ const Todo = ({todo,todos}) => {
     let index = todos.findIndex(item=>item.id == e.id)
     todos[index].done = !todos[index].done
     localStorage.setItem("todos" ,JSON.stringify(todos))  
-    window.location.reload()
+    // window.location.reload()
 
   }
   const deleteClickHandler =(id) =>{
     console.log(id);
     const newTodos = todos.filter(todo=>todo.id !==id)
     localStorage.setItem("todos",JSON.stringify([...newTodos]))
-    window.location.reload()
+    // window.location.reload()
   }
   return (
     <div className={styles.todos} >

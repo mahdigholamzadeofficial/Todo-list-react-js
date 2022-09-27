@@ -51,18 +51,14 @@ const Todos = () => {
         id: Math.random(),
       };
 
-      // todos=[...todo]
-      // todos.push(todo)
+      const newTodoList = [...todos,todo]
+
       setTodos([...todos, todo]);
 
-      // setTodos((prevState) => ({
-      //   ...prevState,
-      //   todo,
-      // }));
-
-      localStorage.setItem("todos", JSON.stringify(todos));
+      localStorage.setItem("todos", JSON.stringify(newTodoList));
       e.target.reset();
       setTodoInput("");
+      console.log(todos);
     } else {
       toast.warn("Set a todo than save it!");
     }
