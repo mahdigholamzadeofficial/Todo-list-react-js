@@ -239,7 +239,7 @@ h5 {
 /* .checkedTodo:checked ~.leftTodoInput{
   display: none;
 } */
-.rightTodo button {
+.rightTodo button,.rightTodo input {
   border: none;
   padding: 6px;
   background-color: rgb(30, 13, 93);
@@ -249,10 +249,10 @@ h5 {
   cursor: pointer;
   transition: 0.3s ease;
 }
-.rightTodo button:nth-child(1) {
+.rightTodo input:nth-child(1) {
   margin-right: 5px;
   background-color: #9c5de9;
 }
-.rightTodo button:nth-child(1):hover {
+.rightTodo input:nth-child(1):hover {
   background-color: #732194;
 }
