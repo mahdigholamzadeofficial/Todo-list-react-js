@@ -4,11 +4,8 @@ import { v4 } from "uuid";
 import "react-toastify/dist/ReactToastify.css";
 import Todo from "./Todo";
 import styles from "./todos.module.css";
-import DeviceDetector from "device-detector-js";
 
 const Todos = () => {
-  // const useTodoStore = create()(devtools(persist((set) => (todos: [],))));
-  //////////////// <variables which will be equal with the values of localStorages!>
   let username;
   //////////////// <States which provides the value of states!>
   const [nameInput, setNameInput] = useState("");
@@ -20,16 +17,6 @@ const Todos = () => {
     setTodos(JSON.parse(localStorage.getItem("todos")) || []);
     username = localStorage.getItem("username") || "";
     setNameInput(username);
-
-    const deviceDetector = new DeviceDetector();
-    const userAgent =
-      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.81 Safari/537.36";
-    const device = deviceDetector.parse(userAgent);
-
-    setTimeout(()=>{
-      toast(`You came with ${device.device.brand} ${device.os.name} :) ` ,{position:"top-center"})
-    },3000)
-    console.log(device);
     
   }, []);
 
